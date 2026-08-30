@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Case Study: 200% Online Sales Growth | SmartFlow Digital</title>
+<title>Case Study: How We Increased Sales for a Sporting Good Supplier | SmartFlow Digital</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -27,6 +27,7 @@
   h1, h2 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
   a { color: inherit; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+  mark { background: none; color: var(--gold); font-weight: 600; }
 
   section.light-panel {
     --bg-dark: #FFFFFF;
@@ -55,23 +56,31 @@
   nav .back:hover { color: var(--gold); }
 
   .header {
-    padding: 90px 0 70px; text-align: center;
-    background: linear-gradient(180deg, rgba(16,29,42,0.95) 0%, rgba(16,29,42,0.9) 100%),
-      url('https://images.unsplash.com/photo-1684695749267-233af13276d0?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+    padding: 100px 0 80px; text-align: center;
+    background: linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1521249692263-e0659c60326e?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
   }
-  .eyebrow { font-size: 13px; color: var(--gold); margin-bottom: 24px; }
-  h1.headline { font-size: 36px; font-weight: 600; line-height: 1.2; max-width: 620px; margin: 0 auto; }
+  .eyebrow { font-size: 13px; color: var(--gold); margin-bottom: 24px; font-weight: 700; letter-spacing: 0.06em; }
+  h1.headline { font-size: 38px; font-weight: 700; line-height: 1.25; max-width: 640px; margin: 0 auto; }
+  .header .sub { font-size: 16px; color: var(--cream-dim); max-width: 520px; margin: 20px auto 0; }
 
   .big-stat { text-align: center; padding: 70px 0 50px; }
-  .stat-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; }
+  .stat-row { display: flex; justify-content: center; gap: 56px; flex-wrap: wrap; }
   .stat-row .stat { text-align: center; }
-  .big-num { font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 700; color: var(--gold); line-height: 1; }
-  .big-num-label { font-size: 15px; color: var(--cream-dim); margin-top: 14px; max-width: 220px; }
+  .big-num { font-family: 'Space Grotesk', sans-serif; font-size: 76px; font-weight: 700; line-height: 1; }
+  .stat:nth-child(1) .big-num { color: #1E9E7E; }
+  .stat:nth-child(2) .big-num { color: #FB923C; }
+  .stat:nth-child(3) .big-num { color: #2E7DA6; }
+  .big-num-label { font-size: 15px; color: var(--cream-dim); margin-top: 14px; max-width: 200px; }
 
   .content { padding: 30px 0 80px; }
   .block { margin-bottom: 48px; }
-  .block .label { font-size: 13px; color: var(--gold); margin-bottom: 12px; }
-  .block p { font-size: 17px; color: var(--cream-dim); }
+  .block .label { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 14px; letter-spacing: 0.04em; }
+  .block p { font-size: 17px; color: var(--cream); font-weight: 450; }
+  .block ul { margin-top: 14px; padding-left: 0; list-style: none; }
+  .block ul li { font-size: 16px; color: var(--cream); font-weight: 450; padding: 9px 0 9px 22px; position: relative; border-bottom: 1px solid var(--line); }
+  .block ul li:last-child { border-bottom: none; }
+  .block ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
   .testimonial { padding: 20px 0 90px; text-align: center; }
   .testimonial blockquote { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; font-style: italic; line-height: 1.4; max-width: 540px; margin: 0 auto 18px; color: var(--cream); }
@@ -79,18 +88,22 @@
 
   .final-cta {
     text-align: center; padding: 110px 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.14) 0%, transparent 60%), var(--bg-darker);
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%), var(--bg-darker);
   }
   .final-cta h2 { font-size: 30px; margin-bottom: 14px; }
   .final-cta p { color: var(--cream-dim); font-size: 16px; margin-bottom: 30px; }
   .btn-primary { display: inline-block; background: var(--gold); color: #101D2A; font-weight: 600; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-size: 15px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .message-link { display: block; font-size: 14px; color: var(--cream-dim); text-decoration: none; }
+  .message-link:hover { color: var(--gold); }
+  .message-link u { text-decoration: underline; text-decoration-color: rgba(201,154,62,0.5); }
 
   footer { padding: 36px 0; background: var(--bg-darker); }
   footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
 
   @media (max-width: 700px) {
     h1.headline { font-size: 26px; }
-    .big-num { font-size: 64px; }
+    .big-num { font-size: 54px; }
     .header { padding: 60px 0 50px; }
     .content, .final-cta { padding: 50px 0; }
     .testimonial blockquote { font-size: 19px; }
@@ -109,7 +122,8 @@
 <section class="header">
   <div class="wrap">
     <div class="eyebrow mono">Case Study</div>
-    <h1 class="headline">How a B2B Manufacturer Became the Go-To Source for Buyers Who Didn't Know Them Yet</h1>
+    <h1 class="headline">How We Increased Sales for a Sporting Good Supplier</h1>
+    <p class="sub">A 25-year-old credential manufacturer with a trusted name and almost no online sales. One year later, online is their fastest-growing channel.</p>
   </div>
 </section>
 
@@ -124,28 +138,49 @@
         <div class="big-num">80%</div>
         <div class="big-num-label">Increase in organic search traffic</div>
       </div>
+      <div class="stat">
+        <div class="big-num">43%</div>
+        <div class="big-num-label">Cited in AI search answers, up from 16% at baseline</div>
+      </div>
     </div>
   </div>
 
   <div class="content wrap">
     <div class="block">
       <div class="label mono">The Client</div>
-      <p>A B2B manufacturer in sports merchandising, selling custom event credentials and bag tags to schools, athletic departments, and youth sports organizations across the country.</p>
+      <p>A 25-year-old Chicago manufacturer of custom event credentials and bag tags — the official credential supplier to USA Swimming, USA Hockey, and Ironman, serving roughly 800 schools, athletic departments, conferences, and youth sports organizations a year.</p>
     </div>
 
     <div class="block">
       <div class="label mono">The Challenge</div>
-      <p>The business relied almost entirely on repeat customers and offline referrals — official supplier relationships with sports organizations, word of mouth among athletic directors, and years of reputation. But buyers searching online for exactly what they made never found them. They were invisible to anyone who didn't already know them, and every new customer had to come through an existing relationship.</p>
+      <p>Twenty-five years had built a trusted name, but almost entirely through relationships. Nearly every order still arrived by phone or email from an existing contact or industry partner. The website drew visitors but rarely turned them into buyers or quote requests — and the higher-margin, self-serve online channel they wanted was barely a channel at all.</p>
+      <ul>
+        <li>Effectively invisible for the terms buyers actually search — findable only by people who already knew the brand name</li>
+        <li>No tracking or follow-up process for the inquiries that did come in</li>
+        <li>Little to no presence when buyers asked AI tools like ChatGPT or Gemini for supplier recommendations</li>
+      </ul>
     </div>
 
     <div class="block">
       <div class="label mono">The Solution</div>
-      <p>We rebuilt their online presence around how their actual buyers search and decide — not around generic marketing best practices. That meant SEO built for the specific language athletic directors and booster clubs use, a stronger and simpler path from a first visit to a real inquiry, and visibility work so they'd show up when buyers ask AI tools like ChatGPT for recommendations, not just Google.</p>
+      <p>We rebuilt their online presence around how their actual buyers search and decide — not around generic marketing best practices.</p>
+      <ul>
+        <li>Monthly SEO grounded in their real buyers — blog content and landing pages targeting the terms and buying patterns of each customer segment</li>
+        <li>A site redesign that moves buyers from first visit to submitted quote or order in fewer steps</li>
+        <li>AI-visibility work so their pages get cited when buyers ask ChatGPT or Gemini for recommendations, not just ranked on Google</li>
+        <li>Tracking on every inquiry, so online became a measurable channel instead of a black box</li>
+      </ul>
     </div>
 
     <div class="block">
       <div class="label mono">The Result</div>
-      <p>Online sales grew 200% in one year, with organic traffic up sharply alongside it. Buyers who'd never heard of them before were now finding them directly — on top of the offline relationships that had always been the business's foundation.</p>
+      <p>Online sales grew <mark>200%</mark> in one year, with organic search traffic up <mark>80%</mark> — and organic search became their single largest revenue channel, ahead of direct and paid.</p>
+      <ul>
+        <li>AI search visibility climbed from <mark>16% to 43%</mark> — the brand is now cited in nearly half the ChatGPT and Gemini queries buyers use to find a supplier</li>
+        <li>76 keywords now rank on the first page of Google, with more terms reaching the top 3 every quarter</li>
+        <li>Buyers who'd never heard of them were now finding — and citing — them directly</li>
+        <li>Online orders became a real, trackable channel, not a byproduct of existing relationships</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -161,7 +196,10 @@
   <div class="wrap">
     <h2>Curious where you're invisible to your own buyers?</h2>
     <p>One free call. No pitch deck, no pressure.</p>
-    <a class="btn-primary" href="mailto:hello@smartflowdigital.co">Get a Free Visibility Check</a>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
+    </div>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
   </div>
 </section>
 
