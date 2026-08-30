@@ -16,6 +16,7 @@
     --line: rgba(237,233,221,0.14);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg-dark);
     color: var(--cream);
@@ -102,7 +103,7 @@
 
   /* Final CTA */
   .final-cta {
-    text-align: center; padding: 130px 0;
+    text-align: center; padding: 130px 0; scroll-margin-top: 72px;
     background:
       radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%),
       linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
@@ -110,6 +111,8 @@
   }
   .final-cta h2 { font-size: 34px; margin-bottom: 14px; }
   .final-cta p { color: var(--cream-dim); font-size: 16px; margin-bottom: 32px; }
+  .calendly-embed { max-width: 680px; margin: 0 auto 20px; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 24px 64px rgba(0,0,0,0.38); }
+  .calendly-inline-widget { min-width: 320px; height: 700px; }
 
   footer { padding: 36px 0; background: var(--bg-darker); }
   footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
@@ -235,7 +238,7 @@
     <h1 class="headline">We help manufacturers serving schools and sports organizations get more leads and sales online.</h1>
     <p class="sub">You know your buyers — athletic directors, booster clubs, league organizers. We know <mark>how they search, when they buy</mark>, and why most manufacturers in this space are invisible to them online.</p>
     <div class="cta-row">
-      <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
+      <a class="btn-primary" href="#contact">Schedule a Free Call</a>
       <a class="btn-secondary" href="case-study.html">See the Case Study</a>
     </div>
     <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
@@ -374,9 +377,9 @@
 <section class="final-cta" id="contact">
   <div class="wrap">
     <h2>Curious where you're invisible to your own buyers?</h2>
-    <p>One free call. No pitch deck, no pressure.</p>
-    <div class="cta-row">
-      <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
+    <p>Pick a time below. One free call, 30 minutes. No pitch deck, no pressure.</p>
+    <div class="calendly-embed">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/dhiraj-smartflowdigital/30min?hide_gdpr_banner=1"></div>
     </div>
     <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
   </div>
@@ -388,6 +391,8 @@
     <span class="mono">smartflowdigital.co</span>
   </div>
 </footer>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </body>
 </html>
