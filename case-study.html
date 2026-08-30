@@ -57,8 +57,8 @@
 
   .header {
     padding: 100px 0 80px; text-align: center;
-    background: linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
-      url('https://images.unsplash.com/photo-1521249692263-e0659c60326e?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+    background: linear-gradient(180deg, rgba(16,29,42,0.9) 0%, rgba(16,29,42,0.88) 100%),
+      url('https://images.unsplash.com/photo-1770129966256-f3cb97adc186?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
   }
   .eyebrow { font-size: 13px; color: var(--gold); margin-bottom: 24px; font-weight: 700; letter-spacing: 0.06em; }
   h1.headline { font-size: 38px; font-weight: 700; line-height: 1.25; max-width: 640px; margin: 0 auto; }
@@ -82,13 +82,12 @@
   .block ul li:last-child { border-bottom: none; }
   .block ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
-  .testimonial { padding: 20px 0 90px; text-align: center; }
-  .testimonial blockquote { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; font-style: italic; line-height: 1.4; max-width: 540px; margin: 0 auto 18px; color: var(--cream); }
-  .testimonial cite { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-style: normal; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; }
-
   .final-cta {
     text-align: center; padding: 110px 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%), var(--bg-darker);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1721924885411-a65796c8af48?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
   }
   .final-cta h2 { font-size: 30px; margin-bottom: 14px; }
   .final-cta p { color: var(--cream-dim); font-size: 16px; margin-bottom: 30px; }
@@ -106,7 +105,6 @@
     .big-num { font-size: 54px; }
     .header { padding: 60px 0 50px; }
     .content, .final-cta { padding: 50px 0; }
-    .testimonial blockquote { font-size: 19px; }
   }
 </style>
 </head>
@@ -182,13 +180,6 @@
         <li>Online became a measurable channel — every order and inquiry now tracked, not lost in a phone log</li>
       </ul>
     </div>
-  </div>
-</section>
-
-<section class="testimonial light-panel">
-  <div class="wrap">
-    <blockquote>"We used to be the best-kept secret in youth sports credentials. Not anymore."</blockquote>
-    <cite>— Brian, Marketing Director, Bagtags</cite>
   </div>
 </section>
 
