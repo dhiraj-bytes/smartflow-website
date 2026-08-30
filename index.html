@@ -228,11 +228,22 @@
   }
   .timeline-node .node-label { font-size: 12.5px; font-weight: 500; color: var(--cream-dim); line-height: 1.4; }
 
+  .about { padding: 90px 0; border-top: 1px solid var(--line); }
+  .about .wrap { max-width: 760px; }
+  .about .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
+  .about h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.28; margin-bottom: 26px; max-width: 600px; color: var(--cream); }
+  .about p { font-size: 16.5px; font-weight: 450; color: var(--cream); margin-bottom: 18px; }
+  .about ul { list-style: none; margin-top: 30px; border-top: 1px solid var(--line); }
+  .about li { padding: 14px 0; font-size: 16px; font-weight: 450; color: var(--cream); border-bottom: 1px solid var(--line); display: flex; gap: 12px; }
+  .about li::before { content: '\2192'; color: var(--gold); font-weight: 700; flex: none; }
+
   @media (max-width: 700px) {
     .calendar-strip { grid-template-columns: 1fr 1fr; }
     .persona-grid { grid-template-columns: 1fr; }
     .calendar-section { padding: 60px 0; }
     .persona-section { padding: 60px 0; }
+    .about { padding: 60px 0; }
+    .about h2 { font-size: 24px; }
     .timeline-track { display: none; }
   }
 </style>
@@ -364,6 +375,20 @@
         <p>Planning months out, needs bulk orders to land exactly on time.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="section-label mono">Who you'd be working with</div>
+    <h2>A small senior team that knows growth — and knows this industry.</h2>
+    <p>SmartFlow Digital is a small, senior team based in the US. We help companies get found by the right buyers online and turn that attention into <mark>quotes and orders</mark>. Search, content, AI visibility, and marketing automation are the whole focus — not one service among many — sharpened over years of client work. You work directly with the people doing the work, so nothing gets lost between you, a strategist, and whoever actually touches your site.</p>
+    <p>We also know your part of the market. We've done this for manufacturers selling into schools, athletic departments, booster clubs, and tournament organizers — buyers who plan on a district budget cycle, order against the sports calendar, and want a quote in hand before they commit. Playbooks written for retail or SaaS don't hold up here. Ours is built around <mark>how these buyers actually search and decide</mark>.</p>
+    <ul>
+      <li>We report in quotes, orders, and revenue — not rankings and traffic charts you can't take to the bank.</li>
+      <li>Everything we recommend, we've already done — there's a live, documented case study behind the numbers on this page.</li>
+      <li>Start with a conversation, not a contract. We'd rather earn the next step than lock you in.</li>
+    </ul>
   </div>
 </section>
 
