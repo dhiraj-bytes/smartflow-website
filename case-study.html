@@ -82,6 +82,15 @@
   .block ul li:last-child { border-bottom: none; }
   .block ul li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 
+  figure.shot { margin: 30px 0 0; }
+  figure.shot + figure.shot { margin-top: 22px; }
+  .shot-frame { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; box-shadow: 0 16px 40px rgba(16,29,42,0.13); }
+  .shot-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: var(--bg-darker); border-bottom: 1px solid var(--line); }
+  .shot-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(34,38,44,0.16); flex: none; }
+  .shot-bar span { margin-left: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--cream-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  figure.shot img { display: block; width: 100%; height: auto; background: #fff; }
+  figure.shot figcaption { margin-top: 13px; padding-left: 13px; border-left: 2px solid var(--gold); font-size: 13px; line-height: 1.55; color: var(--cream-dim); }
+
   .final-cta {
     text-align: center; padding: 110px 0;
     background:
@@ -168,6 +177,13 @@
         <li>AI-visibility work so their pages get cited when buyers ask ChatGPT or Gemini for recommendations, not just ranked on Google</li>
         <li>Tracking on every inquiry, so online became a measurable channel instead of a black box</li>
       </ul>
+      <figure class="shot">
+        <div class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i><span>bagtagsinc.com/swimming</span></div>
+          <img src="assets/redesigned-swim-page.jpg" width="1600" height="892" loading="lazy" alt="Redesigned swim bag tags landing page with the headline 'Upgrade Your Swim Meets With Swim Bag Tags', a Request a Quote button, and clear product navigation.">
+        </div>
+        <figcaption>The rebuilt swim landing page — a buyer-intent headline, a visible <em>Request a quote</em> path, and product facts structured to be read by search engines and AI.</figcaption>
+      </figure>
     </div>
 
     <div class="block">
@@ -179,6 +195,20 @@
         <li>76 keywords now rank on the first page of Google, with more terms reaching the top 3 every quarter</li>
         <li>Online became a measurable channel — every order and inquiry now tracked, not lost in a phone log</li>
       </ul>
+      <figure class="shot">
+        <div class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i><span>google.com/search</span></div>
+          <img src="assets/serp-swim-bag-tags.png" width="1400" height="555" loading="lazy" alt="Google results for 'Where can I buy waterproof swimming bag tags for a swim team?' showing Bag Tags, Inc. ranking with a rich product snippet.">
+        </div>
+        <figcaption>Page one of Google for a high-intent buyer question — the client's swim page ranking with a rich product snippet.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i><span>chatgpt.com</span></div>
+          <img src="assets/ai-answer-swim-bag-tags.jpg" width="1400" height="989" loading="lazy" alt="ChatGPT answering the same question: 'I'd put Bag Tags, Inc. at the top of the list,' with the company's own pages cited as sources.">
+        </div>
+        <figcaption>The same question in ChatGPT: Bag Tags, Inc. named first, with the company's own pages cited as the source.</figcaption>
+      </figure>
     </div>
   </div>
 </section>
