@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SmartFlow Digital — For Sports & School Manufacturers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #1A2B3D;
+    --bg-darker: #101D2A;
+    --cream: #EDE9DD;
+    --cream-dim: #B8C0C9;
+    --gold: #C99A3E;
+    --line: rgba(237,233,221,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-dark);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+  h1, h2 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 32px; }
+
+  section.light-panel {
+    --bg-dark: #FFFFFF;
+    --bg-darker: #F2EFE6;
+    --cream: #22262C;
+    --cream-dim: #5C6470;
+    --gold: #A9782E;
+    --line: rgba(34,38,44,0.12);
+    background: var(--bg-dark);
+    color: var(--cream);
+  }
+
+  /* Signal motif */
+  .signal { position: relative; width: 14px; height: 14px; flex: none; display: inline-block; }
+  .signal::before, .signal::after {
+    content: ''; position: absolute; border-radius: 50%; border: 1px solid var(--gold);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .signal .dot { position: absolute; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .signal::before { width: 14px; height: 14px; opacity: 0.6; }
+  .signal::after { width: 26px; height: 26px; opacity: 0.3; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(16,29,42,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav .wrap { max-width: 1040px; display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--cream); display: flex; align-items: center; gap: 10px; }
+
+  /* Hero */
+  .hero {
+    padding-top: 140px; padding-bottom: 140px; text-align: center;
+    background:
+      linear-gradient(180deg, rgba(16,29,42,0.95) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1464983308776-3c7215084895?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  .eyebrow { font-size: 13px; color: var(--gold); margin-bottom: 20px; }
+  .aside { font-size: 13px; color: var(--cream-dim); margin-bottom: 20px; }
+  h1.headline {
+    font-size: 44px; font-weight: 600; line-height: 1.15; margin-bottom: 24px;
+    background: linear-gradient(100deg, var(--cream) 30%, var(--gold) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--cream);
+    text-shadow: 0 2px 24px rgba(201,154,62,0.25);
+  }
+  mark {
+    background: none; color: var(--gold); font-weight: 600;
+  }
+  .sub { font-size: 18px; color: var(--cream-dim); max-width: 520px; margin: 0 auto 36px; }
+  .btn-primary { display: inline-block; background: var(--gold); color: #101D2A; font-weight: 600; padding: 16px 32px; border-radius: 4px; text-decoration: none; font-size: 15px; transition: transform .15s; }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-secondary {
+    display: inline-block; background: transparent; color: var(--gold); font-weight: 600; padding: 15px 30px;
+    border-radius: 4px; text-decoration: none; font-size: 15px; border: 1.5px solid rgba(201,154,62,0.5);
+    transition: background .15s, transform .15s;
+  }
+  .btn-secondary:hover { background: rgba(201,154,62,0.1); transform: translateY(-1px); }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .message-link { display: block; margin-top: 18px; font-size: 14px; color: var(--cream-dim); text-decoration: none; }
+  .message-link:hover { color: var(--gold); }
+  .message-link u { text-decoration: underline; text-decoration-color: rgba(201,154,62,0.5); }
+  .reassure { margin-top: 20px; font-size: 14px; color: var(--cream-dim); }
+
+  /* Proof */
+  .proof { padding: 120px 0; text-align: center; }
+  .proof .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
+  .proof h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.25; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--cream); }
+  .stat-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; margin-bottom: 36px; }
+  .stat-row .stat { text-align: center; }
+  .big-num { font-family: 'Space Grotesk', sans-serif; font-size: 92px; font-weight: 700; line-height: 1; }
+  .stat:nth-child(1) .big-num { color: #1E9E7E; }
+  .stat:nth-child(2) .big-num { color: #FB923C; }
+  .big-num-label { font-size: 15px; color: var(--cream-dim); margin-top: 12px; max-width: 220px; }
+  .proof-story { font-size: 17px; font-weight: 450; color: var(--cream); max-width: 560px; margin: 0 auto 24px; }
+  .proof a.link { color: var(--gold); font-size: 15px; text-decoration: none; font-weight: 500; }
+
+  /* Final CTA */
+  .final-cta {
+    text-align: center; padding: 130px 0;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1721924885411-a65796c8af48?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  .final-cta h2 { font-size: 34px; margin-bottom: 14px; }
+  .final-cta p { color: var(--cream-dim); font-size: 16px; margin-bottom: 32px; }
+
+  footer { padding: 36px 0; background: var(--bg-darker); }
+  footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
+
+  .who-what { padding: 90px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .who-what .wrap { max-width: 900px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .who-what .col-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 20px; letter-spacing: 0.05em; }
+  .who-what ul { list-style: none; }
+  .who-what li { padding: 11px 0; font-size: 16.5px; font-weight: 450; color: var(--cream); border-bottom: 1px solid var(--line); }
+  .who-what li:last-child { border-bottom: none; }
+  .who-what li span.mark { color: var(--gold); margin-right: 10px; font-weight: 700; }
+  .who-what .services-blurb { font-size: 16.5px; font-weight: 450; color: var(--cream); }
+  .who-what .services-blurb strong { color: var(--cream); font-weight: 600; }
+  .who-what .services-list { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .who-what .pill { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; padding: 5px 11px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.03em; border: 1px solid transparent; }
+  .who-what .pill-teal { color: #2DD4BF; background: rgba(45,212,191,0.14); border-color: rgba(45,212,191,0.35); }
+  .who-what .pill-orange { color: #FB923C; background: rgba(251,146,60,0.14); border-color: rgba(251,146,60,0.35); }
+  .who-what .pill-violet { color: #A78BFA; background: rgba(167,139,250,0.16); border-color: rgba(167,139,250,0.38); }
+  .who-what .pill-pink { color: #F472B6; background: rgba(244,114,182,0.14); border-color: rgba(244,114,182,0.36); }
+
+  .testimonial { padding: 70px 0 110px; text-align: center; }
+  .testimonial blockquote { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 500; font-style: italic; line-height: 1.4; max-width: 560px; margin: 0 auto 20px; color: var(--cream); }
+  .testimonial cite { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-style: normal; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .cred-line { text-align: center; padding: 0 0 90px; }
+  .cred-line p { font-size: 15px; color: var(--cream-dim); max-width: 480px; margin: 0 auto; }
+
+  @media (max-width: 700px) {
+    .who-what .wrap { grid-template-columns: 1fr; gap: 40px; }
+    h1.headline { font-size: 30px; }
+    .big-num { font-size: 72px; }
+    .hero { padding-top: 90px; padding-bottom: 90px; }
+    .proof, .final-cta { padding: 80px 0; }
+    .who-what { padding: 60px 0; }
+    .testimonial blockquote { font-size: 20px; }
+    .testimonial { padding: 50px 0 40px; }
+    .cred-line { padding: 0 0 60px; }
+  }
+
+  /* Seasonal calendar + persona proof section */
+  .calendar-section { padding: 90px 0; }
+  .calendar-section .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; text-align: center; letter-spacing: 0.06em; }
+  .calendar-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.25; text-align: center; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto; color: var(--cream); }
+
+  .calendar-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 64px; }
+  .calendar-item {
+    background: var(--bg-darker); padding: 28px 20px 24px; border-radius: 6px; position: relative; overflow: hidden;
+    border: 1px solid var(--line); transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .calendar-item::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+  }
+  .calendar-item:nth-child(1)::before { background: linear-gradient(90deg, #C99A3E, #E0B85C); }
+  .calendar-item:nth-child(2)::before { background: linear-gradient(90deg, #A6432E, #C96348); }
+  .calendar-item:nth-child(3)::before { background: linear-gradient(90deg, #6B7F94, #8FA3B8); }
+  .calendar-item:nth-child(4)::before { background: linear-gradient(90deg, #C99A3E, #A6432E); }
+  .calendar-item:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+  .calendar-item .icon { width: 30px; height: 30px; margin-bottom: 14px; }
+  .calendar-item .icon svg { width: 100%; height: 100%; }
+  .calendar-item:nth-child(1) .icon { color: #C99A3E; }
+  .calendar-item:nth-child(2) .icon { color: #C96348; }
+  .calendar-item:nth-child(3) .icon { color: #8FA3B8; }
+  .calendar-item:nth-child(4) .icon { color: #C99A3E; }
+  .calendar-item .period {
+    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 14px; font-weight: 500;
+  }
+  .calendar-item h4 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--cream); }
+  .calendar-item p { font-size: 14px; font-weight: 450; color: var(--cream-dim); }
+
+  .persona-section { padding: 90px 0; }
+  .persona-header { margin-bottom: 28px; }
+  .persona-label {
+    font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .persona-intro { font-size: 17px; font-weight: 500; color: var(--cream-dim); max-width: 480px; line-height: 1.5; }
+  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .persona-card { background: var(--bg-dark); padding: 30px 24px; }
+  .persona-avatar {
+    width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: #101D2A; margin-bottom: 18px;
+  }
+  .persona-card:nth-child(1) .persona-avatar { background: linear-gradient(135deg, #C99A3E, #E0B85C); }
+  .persona-card:nth-child(2) .persona-avatar { background: linear-gradient(135deg, #A6432E, #C96348); color: #FBF8F0; }
+  .persona-card:nth-child(3) .persona-avatar { background: linear-gradient(135deg, #6B7F94, #8FA3B8); }
+  .persona-card .role { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--cream); }
+  .persona-card p { font-size: 14.5px; font-weight: 450; color: var(--cream-dim); }
+
+  /* Planning timeline - shows action ahead of each season */
+  .timeline-caption { text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 22px; }
+  .timeline-track { position: relative; height: 100px; margin: 0 0 20px; }
+  .timeline-line {
+    position: absolute; top: 16px; left: 3%; right: 3%; height: 3px; border-radius: 2px;
+    background: linear-gradient(90deg, #C99A3E, #C96348, #8FA3B8, #C99A3E);
+  }
+  .timeline-node { position: absolute; top: 0; transform: translateX(-50%); text-align: center; width: 170px; }
+  .timeline-node .node-dot {
+    width: 14px; height: 14px; border-radius: 50%; margin: 6px auto 12px; position: relative; z-index: 2;
+    box-shadow: 0 0 0 5px var(--bg-dark);
+  }
+  .timeline-node .node-label { font-size: 12.5px; font-weight: 500; color: var(--cream-dim); line-height: 1.4; }
+
+  @media (max-width: 700px) {
+    .calendar-strip { grid-template-columns: 1fr 1fr; }
+    .persona-grid { grid-template-columns: 1fr; }
+    .calendar-section { padding: 60px 0; }
+    .persona-section { padding: 60px 0; }
+    .timeline-track { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="signal"><span class="dot"></span></span> SmartFlow Digital</div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 class="headline">We help manufacturers serving schools and sports organizations get more leads and sales online.</h1>
+    <p class="sub">You know your buyers — athletic directors, booster clubs, league organizers. We know <mark>how they search, when they buy</mark>, and why most manufacturers in this space are invisible to them online.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
+      <a class="btn-secondary" href="case-study.html">See the Case Study</a>
+    </div>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
+    <div class="reassure">We work with official suppliers trusted by leagues and associations like <mark>USA Swimming</mark> and <mark>USA Baseball</mark>.</div>
+  </div>
+</section>
+
+<section class="who-what">
+  <div class="wrap">
+    <div>
+      <div class="col-label mono">Is this you?</div>
+      <ul>
+        <li><span class="mark">→</span><mark>$2M–$20M in revenue</mark>, mostly from offline relationships and referrals</li>
+        <li><span class="mark">→</span>You sell to schools, athletic departments, leagues, or youth sports organizations</li>
+        <li><span class="mark">→</span>Your buyers may be affiliated with <mark>NFHS-member schools, USA Baseball, USA Swimming, NJCAA</mark>, or similar governing bodies</li>
+        <li><span class="mark">→</span>Your busiest seasons follow <mark>the sports calendar</mark> — back-to-school, tournament season, playoffs — not a typical retail calendar</li>
+        <li><span class="mark">→</span>US-based, ready to grow beyond who already knows you</li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-label mono">What we do</div>
+      <p class="services-blurb"><strong>We find out why buyers aren't finding you, then fix it.</strong> That's the whole job — SEO built around how athletic directors and booster clubs actually search, plus automation that turns a <mark>slow quote response into a booked order</mark>, and last season's buyer into this season's reorder.</p>
+      <div class="services-list">
+        <span class="pill pill-teal">SEO</span>
+        <span class="pill pill-orange">Paid Ads</span>
+        <span class="pill pill-violet">Landing Pages</span>
+        <span class="pill pill-pink">Marketing Campaigns</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calendar-section light-panel">
+  <div class="wrap">
+    <div class="section-label mono">How we think about your year</div>
+    <h2>Your buyers don't order on a retail calendar. Neither do we.</h2>
+    <div class="calendar-strip">
+      <div class="calendar-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 12h6M9 16h6"/></svg></div>
+        <div class="period">Aug – Sep</div>
+        <h4>Back-to-School Rush</h4>
+        <p>New rosters, updated gear, the season's first orders.</p>
+      </div>
+      <div class="calendar-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6c2 2 4 3 6.4 3s4.4-1 6.4-3M5.6 18.4c2-2 4-3 6.4-3s4.4 1 6.4 3"/></svg></div>
+        <div class="period">Oct – Dec</div>
+        <h4>Fall &amp; Winter Prep</h4>
+        <p>Basketball, wrestling, and indoor season kickoffs.</p>
+      </div>
+      <div class="calendar-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14l2.5 2.5L16 11"/></svg></div>
+        <div class="period">Jan – Mar</div>
+        <h4>Budget &amp; Planning Season</h4>
+        <p>Next year's budgets get set — this is when you need to be found.</p>
+      </div>
+      <div class="calendar-item">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M10 16.5h4v3.5h-4z"/></svg></div>
+        <div class="period">Apr – Jun</div>
+        <h4>Tournament &amp; Playoff Season</h4>
+        <p>Peak volume, rush turnarounds, championship orders.</p>
+      </div>
+    </div>
+
+    <div class="timeline-caption">How we plan around it</div>
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+      <div class="timeline-node" style="left:10%">
+        <div class="node-dot" style="background:#C99A3E"></div>
+        <div class="node-label">SEO &amp; ads live <strong>before</strong> the rush hits</div>
+      </div>
+      <div class="timeline-node" style="left:36%">
+        <div class="node-dot" style="background:#C96348"></div>
+        <div class="node-label">Content refreshed ahead of indoor season</div>
+      </div>
+      <div class="timeline-node" style="left:62%">
+        <div class="node-dot" style="background:#8FA3B8"></div>
+        <div class="node-label">Push hits hardest — before budgets get set</div>
+      </div>
+      <div class="timeline-node" style="left:90%">
+        <div class="node-dot" style="background:#C99A3E"></div>
+        <div class="node-label">Ads &amp; reorder reminders ramp before peak</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="persona-section">
+  <div class="wrap">
+    <div class="persona-header">
+      <div class="persona-label">We understand your buyers</div>
+      <p class="persona-intro">Three people, three different pressures — all of them deciding whether your site is worth trusting.</p>
+    </div>
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-avatar">AD</div>
+        <div class="role">Athletic Director</div>
+        <p>Manages the budget, juggles a dozen vendors, wants one less thing to chase down.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-avatar">PTA</div>
+        <div class="role">Booster Club / PTA Volunteer</div>
+        <p>Fundraising on a deadline, needs a vendor who makes ordering simple.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-avatar">TO</div>
+        <div class="role">League or Tournament Organizer</div>
+        <p>Planning months out, needs bulk orders to land exactly on time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof light-panel">
+  <div class="wrap">
+    <div class="section-label mono">Proof, not promises</div>
+    <h2>How we increased sales for a sporting good supplier</h2>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="big-num">200%</div>
+        <div class="big-num-label">Online sales growth in one year</div>
+      </div>
+      <div class="stat">
+        <div class="big-num">80%</div>
+        <div class="big-num-label">Increase in organic search traffic</div>
+      </div>
+    </div>
+    <p class="proof-story">They'd grown for years through official supplier relationships and word of mouth among athletic directors — but were invisible to buyers searching online for exactly what they made. We rebuilt their presence around how those buyers actually search, including the terms coaches and booster clubs use, and around their real ordering calendar — season by season, not month by month.</p>
+    <a class="link" href="case-study.html">Read the full story →</a>
+  </div>
+</section>
+
+<section class="final-cta" id="contact">
+  <div class="wrap">
+    <h2>Curious where you're invisible to your own buyers?</h2>
+    <p>One free call. No pitch deck, no pressure.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
+    </div>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SmartFlow Digital</span>
+    <span class="mono">smartflowdigital.co</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Case Study: 200% Online Sales Growth | SmartFlow Digital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #1A2B3D;
+    --bg-darker: #101D2A;
+    --cream: #EDE9DD;
+    --cream-dim: #B8C0C9;
+    --gold: #C99A3E;
+    --line: rgba(237,233,221,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-dark);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: 'IBM Plex Mono', monospace; letter-spacing: 0.04em; text-transform: uppercase; }
+  h1, h2 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.01em; }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  section.light-panel {
+    --bg-dark: #FFFFFF;
+    --bg-darker: #F2EFE6;
+    --cream: #22262C;
+    --cream-dim: #5C6470;
+    --gold: #A9782E;
+    --line: rgba(34,38,44,0.12);
+    background: var(--bg-dark);
+    color: var(--cream);
+  }
+
+  .signal { position: relative; width: 14px; height: 14px; flex: none; display: inline-block; }
+  .signal::before, .signal::after {
+    content: ''; position: absolute; border-radius: 50%; border: 1px solid var(--gold);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .signal .dot { position: absolute; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .signal::before { width: 14px; height: 14px; opacity: 0.6; }
+  .signal::after { width: 26px; height: 26px; opacity: 0.3; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(16,29,42,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  nav .wrap { max-width: 1040px; display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--cream); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  nav .back { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--cream-dim); text-decoration: none; }
+  nav .back:hover { color: var(--gold); }
+
+  .header {
+    padding: 90px 0 70px; text-align: center;
+    background: linear-gradient(180deg, rgba(16,29,42,0.95) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1684695749267-233af13276d0?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  .eyebrow { font-size: 13px; color: var(--gold); margin-bottom: 24px; }
+  h1.headline { font-size: 36px; font-weight: 600; line-height: 1.2; max-width: 620px; margin: 0 auto; }
+
+  .big-stat { text-align: center; padding: 70px 0 50px; }
+  .stat-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; }
+  .stat-row .stat { text-align: center; }
+  .big-num { font-family: 'Space Grotesk', sans-serif; font-size: 84px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .big-num-label { font-size: 15px; color: var(--cream-dim); margin-top: 14px; max-width: 220px; }
+
+  .content { padding: 30px 0 80px; }
+  .block { margin-bottom: 48px; }
+  .block .label { font-size: 13px; color: var(--gold); margin-bottom: 12px; }
+  .block p { font-size: 17px; color: var(--cream-dim); }
+
+  .testimonial { padding: 20px 0 90px; text-align: center; }
+  .testimonial blockquote { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 500; font-style: italic; line-height: 1.4; max-width: 540px; margin: 0 auto 18px; color: var(--cream); }
+  .testimonial cite { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-style: normal; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; }
+
+  .final-cta {
+    text-align: center; padding: 110px 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.14) 0%, transparent 60%), var(--bg-darker);
+  }
+  .final-cta h2 { font-size: 30px; margin-bottom: 14px; }
+  .final-cta p { color: var(--cream-dim); font-size: 16px; margin-bottom: 30px; }
+  .btn-primary { display: inline-block; background: var(--gold); color: #101D2A; font-weight: 600; padding: 15px 30px; border-radius: 4px; text-decoration: none; font-size: 15px; }
+
+  footer { padding: 36px 0; background: var(--bg-darker); }
+  footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
+
+  @media (max-width: 700px) {
+    h1.headline { font-size: 26px; }
+    .big-num { font-size: 64px; }
+    .header { padding: 60px 0 50px; }
+    .content, .final-cta { padding: 50px 0; }
+    .testimonial blockquote { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="signal"><span class="dot"></span></span> SmartFlow Digital</a>
+    <a class="back" href="index.html">← Back to home</a>
+  </div>
+</nav>
+
+<section class="header">
+  <div class="wrap">
+    <div class="eyebrow mono">Case Study</div>
+    <h1 class="headline">How a B2B Manufacturer Became the Go-To Source for Buyers Who Didn't Know Them Yet</h1>
+  </div>
+</section>
+
+<section class="light-panel">
+  <div class="big-stat wrap">
+    <div class="stat-row">
+      <div class="stat">
+        <div class="big-num">200%</div>
+        <div class="big-num-label">Growth in online sales, in one year</div>
+      </div>
+      <div class="stat">
+        <div class="big-num">80%</div>
+        <div class="big-num-label">Increase in organic search traffic</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content wrap">
+    <div class="block">
+      <div class="label mono">The Client</div>
+      <p>A B2B manufacturer in sports merchandising, selling custom event credentials and bag tags to schools, athletic departments, and youth sports organizations across the country.</p>
+    </div>
+
+    <div class="block">
+      <div class="label mono">The Challenge</div>
+      <p>The business relied almost entirely on repeat customers and offline referrals — official supplier relationships with sports organizations, word of mouth among athletic directors, and years of reputation. But buyers searching online for exactly what they made never found them. They were invisible to anyone who didn't already know them, and every new customer had to come through an existing relationship.</p>
+    </div>
+
+    <div class="block">
+      <div class="label mono">The Solution</div>
+      <p>We rebuilt their online presence around how their actual buyers search and decide — not around generic marketing best practices. That meant SEO built for the specific language athletic directors and booster clubs use, a stronger and simpler path from a first visit to a real inquiry, and visibility work so they'd show up when buyers ask AI tools like ChatGPT for recommendations, not just Google.</p>
+    </div>
+
+    <div class="block">
+      <div class="label mono">The Result</div>
+      <p>Online sales grew 200% in one year, with organic traffic up sharply alongside it. Buyers who'd never heard of them before were now finding them directly — on top of the offline relationships that had always been the business's foundation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial light-panel">
+  <div class="wrap">
+    <blockquote>"We used to be the best-kept secret in youth sports credentials. Not anymore."</blockquote>
+    <cite>— Brian, Marketing Director, Bagtags</cite>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="wrap">
+    <h2>Curious where you're invisible to your own buyers?</h2>
+    <p>One free call. No pitch deck, no pressure.</p>
+    <a class="btn-primary" href="mailto:hello@smartflowdigital.co">Get a Free Visibility Check</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SmartFlow Digital</span>
+    <span class="mono">smartflowdigital.co</span>
+  </div>
+</footer>
+
+</body>
+</html>
