@@ -53,6 +53,16 @@
   nav { position: sticky; top: 0; z-index: 10; background: rgba(16,29,42,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
   nav .wrap { max-width: 1040px; display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
   .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--cream); display: flex; align-items: center; gap: 10px; }
+  .nav-actions { display: flex; align-items: center; gap: 20px; }
+  .nav-actions a { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--cream-dim); text-decoration: none; white-space: nowrap; }
+  .nav-actions a:hover { color: var(--gold); }
+  .nav-actions .nav-cta { font-family: 'Inter', sans-serif; background: var(--gold); color: #101D2A; font-weight: 600; padding: 9px 16px; border-radius: 4px; }
+  .nav-actions .nav-cta:hover { color: #101D2A; opacity: 0.88; }
+  @media (max-width: 640px) {
+    .nav-actions { gap: 12px; }
+    .nav-actions a.nav-email { display: none; }
+    .nav-actions .nav-cta { padding: 8px 13px; font-size: 12px; }
+  }
 
   /* Hero */
   .hero {
@@ -116,6 +126,8 @@
 
   footer { padding: 36px 0; background: var(--bg-darker); }
   footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--gold); }
 
   .who-what { padding: 90px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .who-what .wrap { max-width: 900px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
@@ -230,6 +242,10 @@
 <nav>
   <div class="wrap">
     <div class="logo"><span class="signal"><span class="dot"></span></span> SmartFlow Digital</div>
+    <div class="nav-actions">
+      <a class="nav-email" href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a>
+      <a class="nav-cta" href="#contact">Schedule a Free Call</a>
+    </div>
   </div>
 </nav>
 
@@ -241,7 +257,7 @@
       <a class="btn-primary" href="#contact">Schedule a Free Call</a>
       <a class="btn-secondary" href="case-study.html">See the Case Study</a>
     </div>
-    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
     <div class="reassure">We work with official suppliers trusted by leagues and associations like <mark>USA Swimming</mark> and <mark>NFHS</mark>.</div>
   </div>
 </section>
@@ -381,14 +397,14 @@
     <div class="calendly-embed">
       <div class="calendly-inline-widget" data-url="https://calendly.com/dhiraj-smartflowdigital/30min?hide_gdpr_banner=1"></div>
     </div>
-    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© 2026 SmartFlow Digital</span>
-    <span class="mono">smartflowdigital.co</span>
+    <span class="mono"><a href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a></span>
   </div>
 </footer>
 

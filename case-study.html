@@ -52,8 +52,16 @@
   nav { position: sticky; top: 0; z-index: 10; background: rgba(16,29,42,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
   nav .wrap { max-width: 1040px; display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
   .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 18px; color: var(--cream); display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  nav .back { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--cream-dim); text-decoration: none; }
-  nav .back:hover { color: var(--gold); }
+  .nav-actions { display: flex; align-items: center; gap: 20px; }
+  .nav-actions a { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--cream-dim); text-decoration: none; white-space: nowrap; }
+  .nav-actions a:hover { color: var(--gold); }
+  .nav-actions .nav-cta { font-family: 'Inter', sans-serif; background: var(--gold); color: #101D2A; font-weight: 600; padding: 9px 16px; border-radius: 4px; }
+  .nav-actions .nav-cta:hover { color: #101D2A; opacity: 0.88; }
+  @media (max-width: 640px) {
+    .nav-actions { gap: 12px; }
+    .nav-actions a.nav-email { display: none; }
+    .nav-actions .nav-cta { padding: 8px 13px; font-size: 12px; }
+  }
 
   .header {
     padding: 100px 0 80px; text-align: center;
@@ -108,6 +116,8 @@
 
   footer { padding: 36px 0; background: var(--bg-darker); }
   footer .wrap { max-width: 1040px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--cream-dim); }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--gold); }
 
   @media (max-width: 700px) {
     h1.headline { font-size: 26px; }
@@ -122,7 +132,11 @@
 <nav>
   <div class="wrap">
     <a class="logo" href="index.html"><span class="signal"><span class="dot"></span></span> SmartFlow Digital</a>
-    <a class="back" href="index.html">← Back to home</a>
+    <div class="nav-actions">
+      <a class="nav-email" href="index.html">← Home</a>
+      <a class="nav-email" href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a>
+      <a class="nav-cta" href="index.html#contact">Schedule a Free Call</a>
+    </div>
   </div>
 </nav>
 
@@ -220,14 +234,14 @@
     <div class="cta-row">
       <a class="btn-primary" href="https://calendly.com/dhiraj-smartflowdigital/30min" target="_blank" rel="noopener">Schedule a Free Call</a>
     </div>
-    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready to talk? <u>Send us a message</u> instead.</a>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© 2026 SmartFlow Digital</span>
-    <span class="mono">smartflowdigital.co</span>
+    <span class="mono"><a href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a></span>
   </div>
 </footer>
 
