@@ -9,7 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-  /* Foundation (tokens, reset, nav, footer, buttons, .final-cta shell) is in /assets/site.css */
+  /* Foundation + section components (who-what, calendar, personas, timeline,
+     proof, about) are in /assets/site.css */
 
   /* Hero */
   .hero {
@@ -29,138 +30,8 @@
   .sub { font-size: 18px; color: var(--cream-dim); max-width: 520px; margin: 0 auto 36px; }
   .reassure { margin-top: 20px; font-size: 14px; color: var(--cream-dim); }
 
-  /* Proof */
-  .proof { padding: 120px 0; text-align: center; }
-  .proof .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
-  .proof h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.25; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--cream); }
-  .stat-row { display: flex; justify-content: center; gap: 64px; flex-wrap: wrap; margin-bottom: 36px; }
-  .stat-row .stat { text-align: center; }
-  .big-num { font-family: 'Space Grotesk', sans-serif; font-size: 92px; font-weight: 700; line-height: 1; }
-  .stat:nth-child(1) .big-num { color: #1E9E7E; }
-  .stat:nth-child(2) .big-num { color: #FB923C; }
-  .stat:nth-child(3) .big-num { color: #2E7DA6; }
-  .big-num-label { font-size: 15px; color: var(--cream-dim); margin-top: 12px; max-width: 220px; }
-  .proof-story { font-size: 17px; font-weight: 450; color: var(--cream); max-width: 560px; margin: 0 auto 24px; }
-  .proof a.link { color: var(--gold); font-size: 15px; text-decoration: none; font-weight: 500; }
-
-  .who-what { padding: 90px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .who-what .wrap { max-width: 900px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-  .who-what .col-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 20px; letter-spacing: 0.05em; }
-  .who-what ul { list-style: none; }
-  .who-what li { padding: 11px 0; font-size: 16.5px; font-weight: 450; color: var(--cream); border-bottom: 1px solid var(--line); }
-  .who-what li:last-child { border-bottom: none; }
-  .who-what li span.mark { color: var(--gold); margin-right: 10px; font-weight: 700; }
-  .who-what .services-blurb { font-size: 16.5px; font-weight: 450; color: var(--cream); }
-  .who-what .services-blurb strong { color: var(--cream); font-weight: 600; }
-  .who-what .services-list { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
-  .who-what .pill { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; padding: 5px 11px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.03em; border: 1px solid transparent; }
-  .who-what .pill-teal { color: #2DD4BF; background: rgba(45,212,191,0.14); border-color: rgba(45,212,191,0.35); }
-  .who-what .pill-orange { color: #FB923C; background: rgba(251,146,60,0.14); border-color: rgba(251,146,60,0.35); }
-  .who-what .pill-violet { color: #A78BFA; background: rgba(167,139,250,0.16); border-color: rgba(167,139,250,0.38); }
-  .who-what .pill-pink { color: #F472B6; background: rgba(244,114,182,0.14); border-color: rgba(244,114,182,0.36); }
-
-  .testimonial { padding: 70px 0 110px; text-align: center; }
-  .testimonial blockquote { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 500; font-style: italic; line-height: 1.4; max-width: 560px; margin: 0 auto 20px; color: var(--cream); }
-  .testimonial cite { font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-style: normal; color: var(--gold); text-transform: uppercase; letter-spacing: 0.03em; }
-
-  .cred-line { text-align: center; padding: 0 0 90px; }
-  .cred-line p { font-size: 15px; color: var(--cream-dim); max-width: 480px; margin: 0 auto; }
-
   @media (max-width: 700px) {
-    .who-what .wrap { grid-template-columns: 1fr; gap: 40px; }
-    h1.headline { font-size: 30px; }
-    .big-num { font-size: 72px; }
     .hero { padding-top: 90px; padding-bottom: 90px; }
-    .proof, .final-cta { padding: 80px 0; }
-    .who-what { padding: 60px 0; }
-    .testimonial blockquote { font-size: 20px; }
-    .testimonial { padding: 50px 0 40px; }
-    .cred-line { padding: 0 0 60px; }
-  }
-
-  /* Seasonal calendar + persona proof section */
-  .calendar-section { padding: 90px 0; }
-  .calendar-section .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; text-align: center; letter-spacing: 0.06em; }
-  .calendar-section h2 { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.25; text-align: center; margin-bottom: 48px; max-width: 620px; margin-left: auto; margin-right: auto; color: var(--cream); }
-
-  .calendar-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 64px; }
-  .calendar-item {
-    background: var(--bg-darker); padding: 28px 20px 24px; border-radius: 6px; position: relative; overflow: hidden;
-    border: 1px solid var(--line); transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .calendar-item::before {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
-  }
-  .calendar-item:nth-child(1)::before { background: linear-gradient(90deg, #C99A3E, #E0B85C); }
-  .calendar-item:nth-child(2)::before { background: linear-gradient(90deg, #A6432E, #C96348); }
-  .calendar-item:nth-child(3)::before { background: linear-gradient(90deg, #6B7F94, #8FA3B8); }
-  .calendar-item:nth-child(4)::before { background: linear-gradient(90deg, #C99A3E, #A6432E); }
-  .calendar-item:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
-  .calendar-item .icon { width: 30px; height: 30px; margin-bottom: 14px; }
-  .calendar-item .icon svg { width: 100%; height: 100%; }
-  .calendar-item:nth-child(1) .icon { color: #C99A3E; }
-  .calendar-item:nth-child(2) .icon { color: #C96348; }
-  .calendar-item:nth-child(3) .icon { color: #8FA3B8; }
-  .calendar-item:nth-child(4) .icon { color: #C99A3E; }
-  .calendar-item .period {
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); text-transform: uppercase;
-    letter-spacing: 0.06em; margin-bottom: 14px; font-weight: 500;
-  }
-  .calendar-item h4 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--cream); }
-  .calendar-item p { font-size: 14px; font-weight: 450; color: var(--cream-dim); }
-
-  .persona-section { padding: 90px 0; }
-  .persona-header { margin-bottom: 28px; }
-  .persona-label {
-    font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: var(--cream);
-    margin-bottom: 10px;
-  }
-  .persona-intro { font-size: 17px; font-weight: 500; color: var(--cream-dim); max-width: 480px; line-height: 1.5; }
-  .persona-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-  .persona-card { background: var(--bg-dark); padding: 30px 24px; }
-  .persona-avatar {
-    width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: #101D2A; margin-bottom: 18px;
-  }
-  .persona-card:nth-child(1) .persona-avatar { background: linear-gradient(135deg, #C99A3E, #E0B85C); }
-  .persona-card:nth-child(2) .persona-avatar { background: linear-gradient(135deg, #A6432E, #C96348); color: #FBF8F0; }
-  .persona-card:nth-child(3) .persona-avatar { background: linear-gradient(135deg, #6B7F94, #8FA3B8); }
-  .persona-card .role { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--cream); }
-  .persona-card p { font-size: 14.5px; font-weight: 450; color: var(--cream-dim); }
-
-  /* Planning timeline - shows action ahead of each season */
-  .timeline-caption { text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 22px; }
-  .timeline-track { position: relative; height: 100px; margin: 0 0 20px; }
-  .timeline-line {
-    position: absolute; top: 16px; left: 3%; right: 3%; height: 3px; border-radius: 2px;
-    background: linear-gradient(90deg, #C99A3E, #C96348, #8FA3B8, #C99A3E);
-  }
-  .timeline-node { position: absolute; top: 0; transform: translateX(-50%); text-align: center; width: 170px; }
-  .timeline-node .node-dot {
-    width: 14px; height: 14px; border-radius: 50%; margin: 6px auto 12px; position: relative; z-index: 2;
-    box-shadow: 0 0 0 5px var(--bg-dark);
-  }
-  .timeline-node .node-label { font-size: 12.5px; font-weight: 500; color: var(--cream-dim); line-height: 1.4; }
-
-  .about { padding: 90px 0; border-top: 1px solid var(--line); }
-  .about .wrap { max-width: 760px; }
-  .about .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
-  .about h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.28; margin-bottom: 26px; max-width: 600px; color: var(--cream); }
-  .about p { font-size: 16.5px; font-weight: 450; color: var(--cream); margin-bottom: 18px; }
-  .about ul { list-style: none; margin-top: 26px; border-top: 1px solid var(--line); }
-  .about li { padding: 11px 0 11px 26px; font-size: 16px; font-weight: 450; color: var(--cream); border-bottom: 1px solid var(--line); position: relative; }
-  .about li::before { content: '\2192'; position: absolute; left: 0; top: 11px; color: var(--gold); font-weight: 700; }
-  .about li a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,154,62,0.45); }
-  .about li a:hover { border-bottom-color: var(--gold); }
-
-  @media (max-width: 700px) {
-    .calendar-strip { grid-template-columns: 1fr 1fr; }
-    .persona-grid { grid-template-columns: 1fr; }
-    .calendar-section { padding: 60px 0; }
-    .persona-section { padding: 60px 0; }
-    .about { padding: 60px 0; }
-    .about h2 { font-size: 24px; }
-    .timeline-track { display: none; }
   }
 </style>
 </head>
@@ -346,7 +217,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 SmartFlow Digital</span>
-    <span class="mono"><a href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a></span>
+    <span class="mono"><a href="/">Home</a> &nbsp;·&nbsp; <a href="/print/">Print &amp; Personalization</a> &nbsp;·&nbsp; <a href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a></span>
   </div>
 </footer>
 
