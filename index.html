@@ -15,8 +15,15 @@
   .hero {
     padding-top: 140px; padding-bottom: 140px; text-align: center;
     background:
-      linear-gradient(180deg, rgba(16,29,42,0.95) 0%, rgba(16,29,42,0.9) 100%),
-      url('https://images.unsplash.com/photo-1464983308776-3c7215084895?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+      linear-gradient(180deg, rgba(16,29,42,0.92) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1764185800646-f75f7e16e465?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  /* index-only: generic manufacturing imagery, overrides the shared .final-cta shell */
+  .final-cta {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(16,29,42,0.94) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1670483111819-ed62eff77173?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
   }
   h1.headline {
     font-size: 44px; font-weight: 600; line-height: 1.15; margin-bottom: 24px;
@@ -25,7 +32,6 @@
     text-shadow: 0 2px 24px rgba(201,154,62,0.25);
   }
   .sub { font-size: 18px; color: var(--cream-dim); max-width: 540px; margin: 0 auto 36px; }
-  .reassure { margin-top: 20px; font-size: 14px; color: var(--cream-dim); }
 
   /* Who / What */
   .who-what { padding: 90px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -123,7 +129,6 @@
       <a class="btn-secondary" href="/case-study.html">See the Case Study</a>
     </div>
     <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
-    <div class="reassure">We work with US manufacturers doing <mark>$2M–$20M</mark> — including official suppliers to national governing bodies like <mark>USA Swimming</mark> and <mark>NFHS</mark>.</div>
   </div>
 </section>
 
