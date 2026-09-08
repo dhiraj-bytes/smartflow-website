@@ -42,14 +42,6 @@
   .example-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: var(--bg-darker); border-bottom: 1px solid var(--line); }
   .example-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(237,233,221,0.18); flex: none; }
   .example-bar span { margin-left: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--cream-dim); }
-  .example-canvas {
-    aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-    background:
-      repeating-linear-gradient(45deg, rgba(237,233,221,0.035) 0 14px, transparent 14px 28px), var(--bg-darker);
-    color: var(--cream-dim); text-align: center; padding: 24px;
-  }
-  .example-canvas .ph-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); }
-  .example-canvas .ph-note { font-size: 12.5px; color: var(--cream-dim); }
   .example-body { margin-top: 20px; }
   .example-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--cream); }
   .example-body p { font-size: 16px; font-weight: 450; color: var(--cream-dim); margin-bottom: 12px; }
@@ -145,15 +137,12 @@
 
     <div class="example">
       <div class="example-frame">
-        <div class="example-bar"><i></i><i></i><i></i><span>app · quote &amp; proof approval</span></div>
-        <div class="example-canvas">
-          <span class="ph-label">Screenshot — quote &amp; approval view</span>
-          <span class="ph-note">placeholder — real UI screenshot to be added</span>
-        </div>
+        <div class="example-bar"><i></i><i></i><i></i><span>app · proof conversation</span></div>
+        <img class="example-shot" src="/assets/quote-approval-proof.png" width="1344" height="1256" loading="lazy" alt="A proof conversation in the app: the team posts 'Proof v2' with a PDF attached, the customer replies 'approved', and the order shows an Approved status with a timestamp — the whole exchange in one tracked thread.">
       </div>
       <div class="example-body">
         <h3>Quote &amp; proof collaboration app</h3>
-        <p>Their account reps ran every quote through email — send a PDF, wait for feedback, revise, resend, chase the approval, then do it all again for the design files. We built a single space where the customer sees the quote, comments, approves, and proofs the design, with every version tracked. The customer email back-and-forth is gone.</p>
+        <p>Account reps ran every quote through email — send a PDF, wait for feedback, revise, resend, chase the approval, then do it all again for the design files. We built a single space where the customer sees the quote, comments, approves, and proofs the design, with every version tracked. The customer email back-and-forth is gone.</p>
         <span class="walkthrough">Walkthrough video — coming soon</span>
       </div>
     </div>
