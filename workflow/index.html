@@ -15,8 +15,8 @@
   .hero {
     padding-top: 140px; padding-bottom: 140px; text-align: center;
     background:
-      linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
-      url('https://images.unsplash.com/photo-1771923082503-0a3381c46cef?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+      linear-gradient(180deg, rgba(16,29,42,0.9) 0%, rgba(16,29,42,0.82) 100%),
+      url('https://images.unsplash.com/photo-1743385779347-1549dabf1320?auto=format&fit=crop&w=1800&q=72') center/cover no-repeat;
   }
   .final-cta {
     background:
@@ -42,7 +42,7 @@
   .example-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: var(--bg-darker); border-bottom: 1px solid var(--line); }
   .example-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(237,233,221,0.18); flex: none; }
   .example-bar span { margin-left: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--cream-dim); }
-  .example-body { margin-top: 20px; }
+  .example-body { margin-bottom: 20px; max-width: 620px; }
   .example-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--cream); }
   .example-body p { font-size: 16px; font-weight: 450; color: var(--cream-dim); margin-bottom: 12px; }
   .example-body .walkthrough { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--cream-dim); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -136,26 +136,26 @@
     <h2>A few examples of custom tools we've built.</h2>
 
     <div class="example">
-      <div class="example-frame">
-        <div class="example-bar"><i></i><i></i><i></i><span>app · proof conversation</span></div>
-        <img class="example-shot" src="/assets/quote-approval-proof.png" width="1344" height="1256" loading="lazy" alt="A proof conversation in the app: the team posts 'Proof v2' with a PDF attached, the customer replies 'approved', and the order shows an Approved status with a timestamp — the whole exchange in one tracked thread.">
-      </div>
       <div class="example-body">
         <h3>Quote &amp; proof collaboration app</h3>
         <p>Account reps ran every quote through email — send a PDF, wait for feedback, revise, resend, chase the approval, then do it all again for the design files. We built a single space where the customer sees the quote, comments, approves, and proofs the design, with every version tracked. The customer email back-and-forth is gone.</p>
         <span class="walkthrough">Walkthrough video — coming soon</span>
       </div>
+      <div class="example-frame">
+        <div class="example-bar"><i></i><i></i><i></i><span>app · proof conversation</span></div>
+        <img class="example-shot" src="/assets/quote-approval-proof.png" width="1344" height="1256" loading="lazy" alt="A proof conversation in the app: the team posts 'Proof v2' with a PDF attached, the customer replies 'approved', and the order shows an Approved status with a timestamp — the whole exchange in one tracked thread.">
+      </div>
     </div>
 
     <div class="example">
-      <div class="example-frame">
-        <div class="example-bar"><i></i><i></i><i></i><span>app · sales intelligence assistant</span></div>
-        <img class="example-shot" src="/assets/sales-assistant-chatbot.png" width="900" height="1085" loading="lazy" alt="Chat interface answering 'How did we do last month compared to the month before?' with a revenue comparison table, then a channel-by-channel breakdown, then a repeat-customer figure — all pulled from the company's own analytics.">
-      </div>
       <div class="example-body">
         <h3>Leadership insight chatbot</h3>
         <p>Their leadership wanted answers without waiting for a report. We connected their CRM, CMS, and Google Analytics to a chat interface — ask "how did we do last month" or "which channel drove that growth" in plain English and get an answer from their own data. It extends to their sales, invoicing, and finance tools.</p>
         <span class="walkthrough">Walkthrough video — coming soon</span>
+      </div>
+      <div class="example-frame">
+        <div class="example-bar"><i></i><i></i><i></i><span>app · sales intelligence assistant</span></div>
+        <img class="example-shot" src="/assets/sales-assistant-chatbot.png" width="900" height="1085" loading="lazy" alt="Chat interface answering 'How did we do last month compared to the month before?' with a revenue comparison table, then a channel-by-channel breakdown, then a repeat-customer figure — all pulled from the company's own analytics.">
       </div>
     </div>
 
