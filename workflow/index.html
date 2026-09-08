@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SmartFlow Digital — Custom Tools That Fix Operational Bottlenecks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SmartFlow Digital builds custom internal tools for manufacturers and specialty suppliers — quote workflows, approval flows, customer portals, data dashboards — shaped to how your team already works, built fast with AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* Foundation + who-what / about components are in /assets/site.css.
+     Below: page-specific hero + single-use components (examples, process, pov). */
+
+  .hero {
+    padding-top: 140px; padding-bottom: 140px; text-align: center;
+    background:
+      linear-gradient(180deg, rgba(16,29,42,0.93) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1771923082503-0a3381c46cef?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  .final-cta {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,154,62,0.18) 0%, transparent 60%),
+      linear-gradient(180deg, rgba(16,29,42,0.94) 0%, rgba(16,29,42,0.9) 100%),
+      url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=70') center/cover no-repeat;
+  }
+  h1.headline {
+    font-size: 42px; font-weight: 600; line-height: 1.16; margin-bottom: 24px;
+    background: linear-gradient(100deg, var(--cream) 30%, var(--gold) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--cream);
+    text-shadow: 0 2px 24px rgba(201,154,62,0.25);
+  }
+  .sub { font-size: 18px; color: var(--cream-dim); max-width: 560px; margin: 0 auto 36px; }
+
+  /* Examples */
+  .examples { padding: 100px 0; }
+  .examples .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
+  .examples h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.25; margin-bottom: 44px; max-width: 560px; color: var(--cream); }
+  .example { margin-bottom: 56px; }
+  .example-frame { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+  .example-bar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: var(--bg-darker); border-bottom: 1px solid var(--line); }
+  .example-bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(237,233,221,0.18); flex: none; }
+  .example-bar span { margin-left: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--cream-dim); }
+  .example-canvas {
+    aspect-ratio: 16 / 9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    background:
+      repeating-linear-gradient(45deg, rgba(237,233,221,0.035) 0 14px, transparent 14px 28px), var(--bg-darker);
+    color: var(--cream-dim); text-align: center; padding: 24px;
+  }
+  .example-canvas .ph-label { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); }
+  .example-canvas .ph-note { font-size: 12.5px; color: var(--cream-dim); }
+  .example-body { margin-top: 20px; }
+  .example-body h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; color: var(--cream); }
+  .example-body p { font-size: 16px; font-weight: 450; color: var(--cream-dim); margin-bottom: 12px; }
+  .example-body .walkthrough { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--cream-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+  .example-body .walkthrough::before { content: '▸ '; color: var(--gold); }
+  .examples .note { font-size: 15px; color: var(--cream-dim); border-left: 2px solid var(--line); padding-left: 14px; max-width: 560px; }
+
+  /* How it works */
+  .process { padding: 90px 0; border-top: 1px solid var(--line); }
+  .process .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
+  .process h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.25; margin-bottom: 36px; max-width: 560px; color: var(--cream); }
+  .process ol { list-style: none; counter-reset: step; }
+  .process li { counter-increment: step; position: relative; padding: 20px 0 20px 58px; border-top: 1px solid var(--line); }
+  .process li:last-child { border-bottom: 1px solid var(--line); }
+  .process li::before {
+    content: counter(step); position: absolute; left: 0; top: 18px; width: 36px; height: 36px; border-radius: 50%;
+    border: 1px solid var(--gold); color: var(--gold); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .process li h4 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; color: var(--cream); margin-bottom: 5px; }
+  .process li p { font-size: 15px; color: var(--cream-dim); }
+
+  /* Why not off-the-shelf */
+  .pov { padding: 90px 0; border-top: 1px solid var(--line); }
+  .pov .section-label { font-size: 15px; font-weight: 700; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.06em; }
+  .pov h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.28; margin-bottom: 22px; max-width: 560px; color: var(--cream); }
+  .pov .lead { font-size: 17px; color: var(--cream); margin-bottom: 8px; max-width: 600px; }
+  .pov ul { list-style: none; margin-top: 22px; border-top: 1px solid var(--line); }
+  .pov li { padding: 13px 0 13px 26px; font-size: 16px; font-weight: 450; color: var(--cream); border-bottom: 1px solid var(--line); position: relative; }
+  .pov li::before { content: '\2192'; position: absolute; left: 0; top: 13px; color: var(--gold); font-weight: 700; }
+
+  @media (max-width: 700px) {
+    .hero { padding-top: 90px; padding-bottom: 90px; }
+    .examples, .process, .pov { padding: 60px 0; }
+    .examples h2, .process h2, .pov h2 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="/"><span class="signal"><span class="dot"></span></span> SmartFlow Digital</a>
+    <div class="nav-actions">
+      <a class="nav-collapse" href="/">&larr; Home</a>
+      <a class="nav-collapse" href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a>
+      <a class="nav-cta" href="#contact">Schedule a Free Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 class="headline">The bottleneck slowing your team down probably doesn't have a product that fixes it. We build the one that does.</h1>
+    <p class="sub">Quotes stuck in email. Approvals nobody can track. Numbers spread across five tools. We build a small, custom tool that fits how your team already works — <mark>and we build it fast</mark>.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="#contact">Schedule a Free Call</a>
+      <a class="btn-secondary" href="#examples">See What We've Built</a>
+    </div>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
+  </div>
+</section>
+
+<section class="who-what">
+  <div class="wrap">
+    <div>
+      <div class="col-label mono">Is this you?</div>
+      <ul>
+        <li><span class="mark">→</span>A core process runs on <mark>email threads, shared spreadsheets</mark>, and re-typing the same data between systems</li>
+        <li><span class="mark">→</span>You've priced software for it — too expensive, too many features you'd never use, and it still doesn't match how you actually work</li>
+        <li><span class="mark">→</span>"That's just how we've always done it" is costing your team hours every week</li>
+        <li><span class="mark">→</span>Your order, customer, and financial data live in separate tools that <mark>don't talk to each other</mark></li>
+      </ul>
+    </div>
+    <div>
+      <div class="col-label mono">What we build</div>
+      <p class="services-blurb"><strong>Small, purpose-built tools that do one job well</strong> — a quote-and-approval flow, a customer proofing portal, a plain-English dashboard over your own data. Built around your process, using AI to go from idea to working tool in <mark>weeks, not months</mark>. You own it.</p>
+      <div class="services-list">
+        <span class="pill pill-teal">Quote &amp; Approval Flows</span>
+        <span class="pill pill-blue">Customer Portals</span>
+        <span class="pill pill-violet">Data Dashboards</span>
+        <span class="pill pill-orange">Internal Chatbots</span>
+        <span class="pill pill-pink">Integrations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="examples" id="examples">
+  <div class="wrap">
+    <div class="section-label mono">What we've built</div>
+    <h2>Two tools we built for one custom manufacturer — each specific to their workflow.</h2>
+
+    <div class="example">
+      <div class="example-frame">
+        <div class="example-bar"><i></i><i></i><i></i><span>app · quote &amp; proof approval</span></div>
+        <div class="example-canvas">
+          <span class="ph-label">Screenshot — quote &amp; approval view</span>
+          <span class="ph-note">placeholder — real UI screenshot to be added</span>
+        </div>
+      </div>
+      <div class="example-body">
+        <h3>Quote &amp; proof collaboration app</h3>
+        <p>Their account reps ran every quote through email — send a PDF, wait for feedback, revise, resend, chase the approval, then do it all again for the design files. We built a single space where the customer sees the quote, comments, approves, and proofs the design, with every version tracked. The customer email back-and-forth is gone.</p>
+        <span class="walkthrough">Walkthrough video — coming soon</span>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-frame">
+        <div class="example-bar"><i></i><i></i><i></i><span>app · leadership insights</span></div>
+        <div class="example-canvas">
+          <span class="ph-label">Screenshot — chat over company data</span>
+          <span class="ph-note">placeholder — real UI screenshot to be added</span>
+        </div>
+      </div>
+      <div class="example-body">
+        <h3>Leadership insight chatbot</h3>
+        <p>Their leadership wanted answers without waiting for a report. We connected their CRM, CMS, and Google Analytics to a chat interface — ask "which products are growing this quarter" or "where are quotes stalling" in plain English and get an answer from their own data. It extends to their sales, invoicing, and finance tools.</p>
+        <span class="walkthrough">Walkthrough video — coming soon</span>
+      </div>
+    </div>
+
+    <p class="note">Both were built for a custom credential manufacturer, specific to how they work — not products you buy off a shelf. The same approach fits order intake, production scheduling, inventory checks, approval routing, and reporting.</p>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="section-label mono">How it works</div>
+    <h2>Understand the workflow first. Then document, approve, build, deploy.</h2>
+    <ol>
+      <li>
+        <h4>Understand</h4>
+        <p>We map the actual workflow with the people who run it — what happens, where it stalls, and what "done" looks like.</p>
+      </li>
+      <li>
+        <h4>Document &amp; approve</h4>
+        <p>You get a written scope and a fixed price before anything is built. No open-ended timelines, no scope creep.</p>
+      </li>
+      <li>
+        <h4>Build</h4>
+        <p>We use AI tooling to build fast — working software in weeks. You see it early and often, and steer as it takes shape.</p>
+      </li>
+      <li>
+        <h4>Deploy &amp; iterate</h4>
+        <p>It goes live with your team. When your process changes, the tool changes with it — no waiting on a vendor.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="pov">
+  <div class="wrap">
+    <div class="section-label mono">Why not off-the-shelf</div>
+    <h2>Most business software is a bad deal over time.</h2>
+    <p class="lead">You pay per seat forever, use a fraction of the features, and bend your process to fit the tool. For a workflow that's specific to your business, building the right thing once is usually cheaper and always a better fit.</p>
+    <ul>
+      <li>Fits your process exactly — not the 80% an off-the-shelf tool covers</li>
+      <li>You pay to build it once, not to rent it per user every month</li>
+      <li>Only the features you need, so your team actually uses it</li>
+      <li>You own the tool and the code</li>
+      <li>It changes when your process changes — no vendor roadmap to wait on</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="section-label mono">Who you'd be working with</div>
+    <h2>A small senior team that builds — fast, and only what you need.</h2>
+    <p>SmartFlow Digital is a small, senior team based in the US. Alongside our search and AI-visibility work, we build custom internal tools for companies whose processes don't fit what's on the market. You work directly with the people building it.</p>
+    <p>We lean heavily on AI tooling to build quickly and keep the cost down — the kind of tool that used to take a quarter and a big budget now takes weeks. We start by understanding the workflow, agree the scope and price in writing, and <mark>you own what we build</mark>.</p>
+    <ul>
+      <li>Fixed scope and fixed price, agreed before we build.</li>
+      <li>You own the tool and the code.</li>
+      <li>Start with a conversation about the workflow you'd fix first.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="final-cta" id="contact">
+  <div class="wrap">
+    <h2>What's the workflow slowing your team down?</h2>
+    <p>Tell us about it. One free call, 30 minutes. No pitch deck, no pressure.</p>
+    <div class="calendly-embed">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/dhiraj-smartflowdigital/30min?hide_gdpr_banner=1"></div>
+    </div>
+    <a class="message-link" href="mailto:hello@smartflowdigital.co">Not ready for a call? Email <u>hello@smartflowdigital.co</u>.</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SmartFlow Digital</span>
+    <span class="mono"><a href="/">Home</a> &nbsp;·&nbsp; <a href="mailto:hello@smartflowdigital.co">hello@smartflowdigital.co</a></span>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+</body>
+</html>
